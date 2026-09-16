@@ -4,10 +4,13 @@ public class Player : MonoBehaviour
 {
     [Header("Component References")]
     public float speed;
+    public float jumpforce;
     private Rigidbody2D rb;
     private float InputX;
     private Animator anim;
     private SpriteRenderer spriteRenderer;
+    private bool isGround = false;
+    bool jump = false;
 
     private void Awake()
     {
@@ -44,10 +47,48 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = true; // Menghadap kiri
         }
+
+        if (isGround)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+
+            }
+        }
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(InputX * speed, rb.linearVelocity.y); 
+
+        if (jump)
+        {
+            Jump();
+            jump = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = true;
+            anim.SetBool("isJumping", false);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = false;
+        }
+    }
+
+    void Jump()
+    {
+        rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
+        anim.SetBool("isJumping", true);
     }
 }
