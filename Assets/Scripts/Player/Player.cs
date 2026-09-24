@@ -1,94 +1,128 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
+
 {
-    [Header("Component References")]
-    public float speed;
-    public float jumpforce;
-    private Rigidbody2D rb;
-    private float InputX;
-    private Animator anim;
-    private SpriteRenderer spriteRenderer;
-    private bool isGround = false;
-    bool jump = false;
+
+    [Header("Movement")]
+    public float speed = 10;
+    public float jumpForce = 20;
+    public float coyoteTime = 0.15f;
+    public int maxJump = 2;
+
+    [Header("Ground Check")]
+    public Transform groundCheckTransform; // posisi dari GroundCheck
+    public float groundCheckRadius;  //ukuran dari ground check
+    public LayerMask groundLayer; //layer ground
+
+    private InputSystem_Actions actions;
+    private int jumpRemaining;
+
+    bool isGrounded;
+    bool wasGrounded;
+    float move;
+    float coyoteTimeCounter;
+    Rigidbody2D rb;
+    Animator anim;
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        actions = new InputSystem_Actions();
+        rb = GetComponent<Rigidbody2D>();                  
+        anim = GetComponent<Animator>();                   
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void OnEnable()
     {
-        
+        actions.Player.Enable();
+        actions.Player.Move.performed += Movement;
+        actions.Player.Jump.performed += Jumping;
+
+        actions.Player.Move.canceled += Movement;
     }
 
-    // Update is called once per frame
+    private void OnDisable()
+    {
+        actions.Player.Disable();
+        actions.Player.Move.performed -= Movement;
+        actions.Player.Jump.performed -= Jumping;
+
+        actions.Player.Move.canceled -= Movement;
+    }
+
+    void Movement(InputAction.CallbackContext ctx)
+    {
+        move = ctx.ReadValue<Vector2>().x;
+    }
+
+    void Jumping(InputAction.CallbackContext ctx)
+    {
+        bool firstJumpAllowed = coyoteTimeCounter > 0f;
+        bool extraJumpAllowed = jumpRemaining < maxJump;
+
+        if (ctx.performed && jumpRemaining > 0f && (firstJumpAllowed || extraJumpAllowed))
+        {
+            rb.linearVelocityY = jumpForce;
+            coyoteTimeCounter = 0f;
+            jumpRemaining--;
+        }
+    }
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 5;
+    }
+
     void Update()
     {
-        InputX = Input.GetAxis("Horizontal");
+        isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayer);
 
-        if (InputX != 0)
+        if (isGrounded && !wasGrounded)
         {
-            anim.SetBool("isRunning", true);
-            anim.SetFloat("animSpeed", speed / 5f);
+            jumpRemaining = maxJump;
+        }
+
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (InputX > 0)
-        {
-            spriteRenderer.flipX = false; // Menghadap kanan
-        }
-        else if (InputX < 0)
-        {
-            spriteRenderer.flipX = true; // Menghadap kiri
-        }
+        wasGrounded = isGrounded;
+        rb.linearVelocityX = move * speed;
 
-        if (isGround)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                jump = true;
-
-            }
-        }
+        UpdateAnimation();
     }
-
-    private void FixedUpdate()
+    void UpdateAnimation()
     {
-        rb.linearVelocity = new Vector2(InputX * speed, rb.linearVelocity.y); 
+        
+        bool isRunning = move != 0;
+        anim.SetBool("isRunning", isRunning);
+        anim.SetFloat("animSpeed", speed / 5f);
 
-        if (jump)
+        
+        anim.SetBool("isJumping", !isGrounded);
+
+        
+        if (move > 0)
         {
-            Jump();
-            jump = false;
+            spriteRenderer.flipX = false;   
+        }
+        else if (move < 0)
+        {
+            spriteRenderer.flipX = true;    
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGround = true;
-            anim.SetBool("isJumping", false);
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundCheckTransform.position, groundCheckRadius);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGround = false;
-        }
-    }
-
-    void Jump()
-    {
-        rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
-        anim.SetBool("isJumping", true);
-    }
 }
