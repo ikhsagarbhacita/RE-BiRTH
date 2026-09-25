@@ -10,13 +10,22 @@ public class Player : MonoBehaviour
     public float coyoteTime = 0.15f;
     public int maxJump = 2;
 
+    [Header("Aim & Shot")]
+    public Transform aimCursorVisual;
+    public float aimRadius = 3f;
+    public float fireRate = 0.2f;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 10f;
+
     [Header("Ground Check")]
     public Transform groundCheckTransform; // posisi dari GroundCheck
     public float groundCheckRadius;  //ukuran dari ground check
     public LayerMask groundLayer; //layer ground
 
+    private float fireCooldown;
     private InputSystem_Actions actions;
     private int jumpRemaining;
+    private Vector2 clampedOffset;
 
     bool isGrounded;
     bool wasGrounded;
@@ -29,7 +38,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         actions = new InputSystem_Actions();
-        rb = GetComponent<Rigidbody2D>();                  
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 5;
         anim = GetComponent<Animator>();                   
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -72,8 +82,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 5;
+        
     }
 
     void Update()
@@ -98,6 +107,8 @@ public class Player : MonoBehaviour
         rb.linearVelocityX = move * speed;
 
         UpdateAnimation();
+        HandleAim();
+        HandleShoting();
     }
     void UpdateAnimation()
     {
@@ -118,6 +129,35 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = true;    
         }
+    }
+
+    private void HandleAim()
+    {
+        Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 direction = mouseWorldPos - (Vector2)transform.position;
+
+        clampedOffset = Vector2.ClampMagnitude(direction, aimRadius);
+
+        aimCursorVisual.position = (Vector2)transform.position + clampedOffset;
+    }
+
+    private void HandleShoting()
+    {
+        fireCooldown -= Time.deltaTime;
+
+        if(Mouse.current.leftButton.isPressed && fireCooldown < 0f)
+        {
+            Shoot();
+            fireCooldown = fireRate;
+        }
+    }
+
+    private void Shoot()
+    {
+        Vector2 shootDirection = clampedOffset.normalized;
+
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().linearVelocity = shootDirection * bulletSpeed;
     }
     private void OnDrawGizmosSelected()
     {
