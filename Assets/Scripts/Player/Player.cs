@@ -158,6 +158,7 @@ public class Player : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().linearVelocity = shootDirection * bulletSpeed;
+
     }
     private void OnDrawGizmosSelected()
     {
