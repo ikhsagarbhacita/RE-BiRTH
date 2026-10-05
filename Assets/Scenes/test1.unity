@@ -701,8 +701,13 @@ MonoBehaviour:
   groundCheckTransform: {fileID: 1506684513}
   groundCheckRadius: 0.3
   groundLayer:
-    serializedVersion: 2
     m_Bits: 8
+  <MoveInput>k__BackingField: 0
+  <isGround>k__BackingField: 0
+  wasGround: 0
+  coyoteTimeCounter: 0
+  rb: {fileID: 0}
+  maxJump: 2
 --- !u!114 &703512170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009147182eb115f4dbef675f25d99fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
+  movement: {fileID: 0}
+  anim: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!114 &703512171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +753,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4126030044372189779, guid: c833c995d83576e4097f918381eaa1d8, type: 3}
   bulletSpeed: 30
   fireRate: 0.2
+  fireCooldown: 0
+  aim: {fileID: 0}
 --- !u!114 &703512173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,20 +767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576236f5e21304a4b9479c44b19c6160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  speed: 10
-  jumpForce: 20
-  coyoteTime: 0.15
-  maxJump: 2
-  aimCursorVisual: {fileID: 23640781}
-  aimRadius: 3
-  fireRate: 0.2
-  bulletPrefab: {fileID: 4126030044372189779, guid: c833c995d83576e4097f918381eaa1d8, type: 3}
-  bulletSpeed: 10
-  groundCheckTransform: {fileID: 1506684513}
-  groundCheckRadius: 0.3
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1 &1506684512
 GameObject:
   m_ObjectHideFlags: 0
