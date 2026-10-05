@@ -500,7 +500,11 @@ GameObject:
   - component: {fileID: 703512164}
   - component: {fileID: 703512168}
   - component: {fileID: 703512163}
+  - component: {fileID: 703512173}
   - component: {fileID: 703512169}
+  - component: {fileID: 703512170}
+  - component: {fileID: 703512171}
+  - component: {fileID: 703512172}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -688,6 +692,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 703512162}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac9ddbb296efab40b2e77b2fd548651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  speed: 10
+  jumpForce: 20
+  coyoteTime: 0.15
+  groundCheckTransform: {fileID: 1506684513}
+  groundCheckRadius: 0.3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &703512170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703512162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009147182eb115f4dbef675f25d99fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
+--- !u!114 &703512171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703512162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65cd47b69bc50a4d96b4849e983fd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAim
+  aimVisual: {fileID: 23640781}
+  aimRadius: 2
+  clampedOffset: {x: 0, y: 0}
+--- !u!114 &703512172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703512162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df57eac63c108094a9c701846d4e8f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShooting
+  bulletPrefab: {fileID: 4126030044372189779, guid: c833c995d83576e4097f918381eaa1d8, type: 3}
+  bulletSpeed: 30
+  fireRate: 0.2
+--- !u!114 &703512173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703512162}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 576236f5e21304a4b9479c44b19c6160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
@@ -696,12 +762,12 @@ MonoBehaviour:
   coyoteTime: 0.15
   maxJump: 2
   aimCursorVisual: {fileID: 23640781}
-  aimRadius: 1.5
+  aimRadius: 3
   fireRate: 0.2
   bulletPrefab: {fileID: 4126030044372189779, guid: c833c995d83576e4097f918381eaa1d8, type: 3}
-  bulletSpeed: 50
+  bulletSpeed: 10
   groundCheckTransform: {fileID: 1506684513}
-  groundCheckRadius: 0.4
+  groundCheckRadius: 0.3
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
