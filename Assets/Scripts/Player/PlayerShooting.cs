@@ -5,26 +5,29 @@ public class PlayerShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float bulletSpeed = 30f;
-    public float fireRate = 0.2f;
+    //public float fireRate = 0.2f;
 
     private float fireCooldown;
     private PlayerAim aim;
+    private PlayerMovement movement;
     private InputSystem_Actions actions;
 
     private void Awake()
     {
         aim = GetComponent<PlayerAim>();
+        movement = GetComponent<PlayerMovement>();
         actions = new InputSystem_Actions();
     }
 
     private void Update()
     {
-        fireCooldown -= Time.deltaTime;
+        //fireCooldown -= Time.deltaTime;
 
-        if(actions.Player.Attack.IsPressed() && fireCooldown < 0)
+        if (actions.Player.Attack.IsPressed() && /*fireCooldown < 0 &&*/ movement.isGround && movement.isMoving ==false)
         {
             Shoot();
-            fireCooldown = fireRate;
+            //fireCooldown = fireRate;
+            
         }
     }
 
@@ -43,6 +46,8 @@ public class PlayerShooting : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().linearVelocity = shootDirection * bulletSpeed;
-        Destroy(bullet, 2f);
+
+        float range = aim.limitOffset.magnitude;
+        Destroy(bullet, range / bulletSpeed);
     }
 }

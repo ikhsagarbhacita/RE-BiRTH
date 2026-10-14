@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float MoveInput { get; private set; }
     public float Speed => speed;
     public bool isGround { get; private set; }
+    public bool isMoving { get; private set; }
 
 
     private bool wasGround;
@@ -47,12 +48,24 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         MoveInput = actions.Player.Move.ReadValue<Vector2>().x;
+
+        if(MoveInput != 0)
+        {
+            Debug.Log("gerak");
+            isMoving = true;
+        }
+        else
+        {
+            Debug.Log("diem");
+            isMoving = false;
+        }
+
         GroundState();
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(MoveInput * speed, rb.linearVelocityY);
+        Moving();
     }
 
     private void Jumping(InputAction.CallbackContext ctx)
@@ -65,6 +78,11 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter = 0f;
         }
         
+    }
+
+    private void Moving()
+    {
+        rb.linearVelocity = new Vector2(MoveInput * speed, rb.linearVelocityY);
     }
 
     private void GroundState()
