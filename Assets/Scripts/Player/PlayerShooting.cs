@@ -5,7 +5,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float bulletSpeed = 30f;
-    public float fireRate = 0.2f;
+    //public float fireRate = 0.2f;
 
     private float fireCooldown;
     private PlayerAim aim;
@@ -21,12 +21,12 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
-        fireCooldown -= Time.deltaTime;
+        //fireCooldown -= Time.deltaTime;
 
-        if (actions.Player.Attack.IsPressed() && fireCooldown < 0 && movement.isGround && movement.isMoving ==false)
+        if (actions.Player.Attack.IsPressed() && /*fireCooldown < 0 &&*/ movement.isGround && movement.isMoving ==false)
         {
             Shoot();
-            fireCooldown = fireRate;
+            //fireCooldown = fireRate;
             
         }
     }
