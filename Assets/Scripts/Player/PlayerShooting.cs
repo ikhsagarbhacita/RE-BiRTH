@@ -21,7 +21,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
-        //fireCooldown -= Time.deltaTime;
+        fireCooldown -= Time.deltaTime;
 
         if (actions.Player.Attack.IsPressed() && /*fireCooldown < 0 &&*/ movement.isGround && movement.isMoving ==false)
         {
