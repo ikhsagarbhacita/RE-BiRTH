@@ -19,7 +19,7 @@ public class PlayerAnimation : MonoBehaviour
         float move = movement.MoveInput;
 
         anim.SetBool("isRunning", move != 0f);
-        anim.SetFloat("animSpeed", movement.Speed / 5f);
+        anim.SetFloat("animSpeed", movement.Speed / 7f);
         anim.SetBool("isJumping", !movement.isGround);
 
         if (move > 0)
