@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 30f75c8dc49424740b4a507e26836ea4
+guid: 2989c368cf4790d4e85e20ae8db3af8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1846781244278701463
-    second: Fall (32x32)_0
+      213: -7891317895049826078
+    second: Game Title - Icon_0
+  - first:
+      213: 2452326168610277583
+    second: Game Title - Icon_1
+  - first:
+      213: 1961708280391291796
+    second: Game Title - Icon_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,27 +102,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fall (32x32)_0
+      name: Game Title - Icon_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 25
-        height: 27
+        x: 84
+        y: 54
+        width: 483
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9620ae43e3aee56e0800000000000000
-      internalID: -1846781244278701463
+      spriteID: 2e03fd73f286c7290800000000000000
+      internalID: -7891317895049826078
       vertices: []
       indices: 
       edges: []
@@ -125,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e0aba290a70287042beefa211aaa933a
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +154,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fall (32x32)_0: -1846781244278701463
+      Game Title - Icon_0: -7891317895049826078
+      Game Title - Icon_1: 2452326168610277583
+      Game Title - Icon_2: 1961708280391291796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
