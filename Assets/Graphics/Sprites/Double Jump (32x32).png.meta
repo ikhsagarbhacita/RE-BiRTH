@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 8fe55dd247edea7479a34b58ea27be34
+guid: 5acf27f2b6ec56244a839c377db75a49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8044994011250463770
-    second: Modern Product Feature Comparison Infographic Presentation (3)_0
+      213: -9101230857065804138
+    second: Double Jump (32x32)_0
   - first:
-      213: 2423809413215599077
-    second: Modern Product Feature Comparison Infographic Presentation (3)_1
+      213: -6204479477933590408
+    second: Double Jump (32x32)_1
   - first:
-      213: 1276676298524636749
-    second: Modern Product Feature Comparison Infographic Presentation (3)_2
+      213: 7040038629683462113
+    second: Double Jump (32x32)_2
   - first:
-      213: 2798467626214811686
-    second: Modern Product Feature Comparison Infographic Presentation (3)_3
+      213: 781615245368611544
+    second: Double Jump (32x32)_3
   - first:
-      213: -1190366313358598673
-    second: Modern Product Feature Comparison Infographic Presentation (3)_4
+      213: -3939753913355333839
+    second: Double Jump (32x32)_4
   - first:
-      213: 5157606070079945649
-    second: Modern Product Feature Comparison Infographic Presentation (3)_5
-  - first:
-      213: -5751555258968533227
-    second: Modern Product Feature Comparison Infographic Presentation (3)_6
-  - first:
-      213: 257779688620504872
-    second: Modern Product Feature Comparison Infographic Presentation (3)_7
+      213: 6301718139250434432
+    second: Double Jump (32x32)_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 480
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,17 +111,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_0
+      name: Double Jump (32x32)_0
       rect:
         serializedVersion: 2
-        x: 501
-        y: 828
-        width: 287
-        height: 477
+        x: 4
+        y: 4
+        width: 26
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a149ab4dd6f85af60800000000000000
-      internalID: 8044994011250463770
+      spriteID: 69ec4c181cee1b180800000000000000
+      internalID: -9101230857065804138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_1
+      name: Double Jump (32x32)_1
       rect:
         serializedVersion: 2
-        x: 970
-        y: 826
-        width: 250
-        height: 476
+        x: 36
+        y: 4
+        width: 26
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e9b6f5c1d913a120800000000000000
-      internalID: 2423809413215599077
+      spriteID: 878319d99c245e9a0800000000000000
+      internalID: -6204479477933590408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_2
+      name: Double Jump (32x32)_2
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 824
-        width: 247
-        height: 471
+        x: 68
+        y: 2
+        width: 25
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d46b8b2545aa7b110800000000000000
-      internalID: 1276676298524636749
+      spriteID: 1ef7f4f75dd33b160800000000000000
+      internalID: 7040038629683462113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_3
+      name: Double Jump (32x32)_3
       rect:
         serializedVersion: 2
-        x: 1791
-        y: 818
-        width: 253
-        height: 482
+        x: 100
+        y: 2
+        width: 25
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 628e6f7aa7726d620800000000000000
-      internalID: 2798467626214811686
+      spriteID: 8d2d93bacead8da00800000000000000
+      internalID: 781615245368611544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_4
+      name: Double Jump (32x32)_4
       rect:
         serializedVersion: 2
-        x: 513
-        y: 209
-        width: 292
-        height: 493
+        x: 130
+        y: 3
+        width: 26
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fed5ba31528fa7fe0800000000000000
-      internalID: -1190366313358598673
+      spriteID: 13f000480be2359c0800000000000000
+      internalID: -3939753913355333839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_5
+      name: Double Jump (32x32)_5
       rect:
         serializedVersion: 2
-        x: 980
-        y: 211
-        width: 243
-        height: 477
+        x: 162
+        y: 3
+        width: 26
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,52 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1bb7382056f739740800000000000000
-      internalID: 5157606070079945649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_6
-      rect:
-        serializedVersion: 2
-        x: 1378
-        y: 214
-        width: 240
-        height: 478
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 517962b07fe5e20b0800000000000000
-      internalID: -5751555258968533227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (3)_7
-      rect:
-        serializedVersion: 2
-        x: 1816
-        y: 216
-        width: 243
-        height: 479
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8273982d241d39300800000000000000
-      internalID: 257779688620504872
+      spriteID: 08168ac7243347750800000000000000
+      internalID: 6301718139250434432
       vertices: []
       indices: 
       edges: []
@@ -310,14 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Modern Product Feature Comparison Infographic Presentation (3)_0: 8044994011250463770
-      Modern Product Feature Comparison Infographic Presentation (3)_1: 2423809413215599077
-      Modern Product Feature Comparison Infographic Presentation (3)_2: 1276676298524636749
-      Modern Product Feature Comparison Infographic Presentation (3)_3: 2798467626214811686
-      Modern Product Feature Comparison Infographic Presentation (3)_4: -1190366313358598673
-      Modern Product Feature Comparison Infographic Presentation (3)_5: 5157606070079945649
-      Modern Product Feature Comparison Infographic Presentation (3)_6: -5751555258968533227
-      Modern Product Feature Comparison Infographic Presentation (3)_7: 257779688620504872
+      Double Jump (32x32)_0: -9101230857065804138
+      Double Jump (32x32)_1: -6204479477933590408
+      Double Jump (32x32)_2: 7040038629683462113
+      Double Jump (32x32)_3: 781615245368611544
+      Double Jump (32x32)_4: -3939753913355333839
+      Double Jump (32x32)_5: 6301718139250434432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

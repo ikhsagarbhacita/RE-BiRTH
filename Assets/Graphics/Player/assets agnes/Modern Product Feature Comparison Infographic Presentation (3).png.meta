@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: 8e4e090827ad8b0498f403efab09357f
+guid: 8fe55dd247edea7479a34b58ea27be34
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1491633934244826232
-    second: Modern Product Feature Comparison Infographic Presentation (4)_0
+      213: 8044994011250463770
+    second: Modern Product Feature Comparison Infographic Presentation (3)_0
   - first:
-      213: -2883548164895772219
-    second: Modern Product Feature Comparison Infographic Presentation (4)_1
+      213: 2423809413215599077
+    second: Modern Product Feature Comparison Infographic Presentation (3)_1
   - first:
-      213: 2340487454415314344
-    second: Modern Product Feature Comparison Infographic Presentation (4)_2
+      213: 1276676298524636749
+    second: Modern Product Feature Comparison Infographic Presentation (3)_2
   - first:
-      213: -701229759590296578
-    second: Modern Product Feature Comparison Infographic Presentation (4)_3
+      213: 2798467626214811686
+    second: Modern Product Feature Comparison Infographic Presentation (3)_3
   - first:
-      213: -1207028456802624194
-    second: Modern Product Feature Comparison Infographic Presentation (4)_4
+      213: -1190366313358598673
+    second: Modern Product Feature Comparison Infographic Presentation (3)_4
   - first:
-      213: -3452518265896868612
-    second: Modern Product Feature Comparison Infographic Presentation (4)_5
+      213: 5157606070079945649
+    second: Modern Product Feature Comparison Infographic Presentation (3)_5
+  - first:
+      213: -5751555258968533227
+    second: Modern Product Feature Comparison Infographic Presentation (3)_6
+  - first:
+      213: 257779688620504872
+    second: Modern Product Feature Comparison Infographic Presentation (3)_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -111,39 +117,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (4)_0
+      name: Modern Product Feature Comparison Infographic Presentation (3)_0
       rect:
         serializedVersion: 2
-        x: 167
-        y: 517
-        width: 314
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8833b6ef6d6ac4be0800000000000000
-      internalID: -1491633934244826232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (4)_1
-      rect:
-        serializedVersion: 2
-        x: 568
-        y: 507
+        x: 501
+        y: 828
         width: 287
-        height: 508
+        height: 477
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c178a2c8349bf7d0800000000000000
-      internalID: -2883548164895772219
+      spriteID: a149ab4dd6f85af60800000000000000
+      internalID: 8044994011250463770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (4)_2
+      name: Modern Product Feature Comparison Infographic Presentation (3)_1
       rect:
         serializedVersion: 2
-        x: 983
-        y: 507
-        width: 265
-        height: 508
+        x: 970
+        y: 826
+        width: 250
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8addea970f41b7020800000000000000
-      internalID: 2340487454415314344
+      spriteID: 5e9b6f5c1d913a120800000000000000
+      internalID: 2423809413215599077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (4)_3
+      name: Modern Product Feature Comparison Infographic Presentation (3)_2
       rect:
         serializedVersion: 2
-        x: 1347
-        y: 507
-        width: 309
-        height: 515
+        x: 1381
+        y: 824
+        width: 247
+        height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef310b9bf3bb446f0800000000000000
-      internalID: -701229759590296578
+      spriteID: d46b8b2545aa7b110800000000000000
+      internalID: 1276676298524636749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (4)_4
+      name: Modern Product Feature Comparison Infographic Presentation (3)_3
       rect:
         serializedVersion: 2
-        x: 1789
-        y: 516
+        x: 1791
+        y: 818
         width: 253
-        height: 506
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3ddd7e7306cf3fe0800000000000000
-      internalID: -1207028456802624194
+      spriteID: 628e6f7aa7726d620800000000000000
+      internalID: 2798467626214811686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern Product Feature Comparison Infographic Presentation (4)_5
+      name: Modern Product Feature Comparison Infographic Presentation (3)_4
       rect:
         serializedVersion: 2
-        x: 2151
-        y: 519
-        width: 287
-        height: 503
+        x: 513
+        y: 209
+        width: 292
+        height: 493
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +237,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf46bacede03610d0800000000000000
-      internalID: -3452518265896868612
+      spriteID: fed5ba31528fa7fe0800000000000000
+      internalID: -1190366313358598673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern Product Feature Comparison Infographic Presentation (3)_5
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 211
+        width: 243
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb7382056f739740800000000000000
+      internalID: 5157606070079945649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern Product Feature Comparison Infographic Presentation (3)_6
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 214
+        width: 240
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517962b07fe5e20b0800000000000000
+      internalID: -5751555258968533227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern Product Feature Comparison Infographic Presentation (3)_7
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 216
+        width: 243
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8273982d241d39300800000000000000
+      internalID: 257779688620504872
       vertices: []
       indices: 
       edges: []
@@ -260,12 +323,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Modern Product Feature Comparison Infographic Presentation (4)_0: -1491633934244826232
-      Modern Product Feature Comparison Infographic Presentation (4)_1: -2883548164895772219
-      Modern Product Feature Comparison Infographic Presentation (4)_2: 2340487454415314344
-      Modern Product Feature Comparison Infographic Presentation (4)_3: -701229759590296578
-      Modern Product Feature Comparison Infographic Presentation (4)_4: -1207028456802624194
-      Modern Product Feature Comparison Infographic Presentation (4)_5: -3452518265896868612
+      Modern Product Feature Comparison Infographic Presentation (3)_0: 8044994011250463770
+      Modern Product Feature Comparison Infographic Presentation (3)_1: 2423809413215599077
+      Modern Product Feature Comparison Infographic Presentation (3)_2: 1276676298524636749
+      Modern Product Feature Comparison Infographic Presentation (3)_3: 2798467626214811686
+      Modern Product Feature Comparison Infographic Presentation (3)_4: -1190366313358598673
+      Modern Product Feature Comparison Infographic Presentation (3)_5: 5157606070079945649
+      Modern Product Feature Comparison Infographic Presentation (3)_6: -5751555258968533227
+      Modern Product Feature Comparison Infographic Presentation (3)_7: 257779688620504872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
