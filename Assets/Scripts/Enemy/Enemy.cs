@@ -88,6 +88,7 @@ public class Enemy : MonoBehaviour
     {
         HandleCollisions();
         HandleAnimator();
+        PatrolMove();
 
         idleTimer -= Time.deltaTime; // Decrease the value
         stunTimer -= Time.deltaTime;
