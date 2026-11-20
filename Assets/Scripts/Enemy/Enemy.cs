@@ -237,7 +237,7 @@ public class Enemy : MonoBehaviour
     protected virtual void HandleAnimator()
     {
         if (anim != null && animParams.Contains("xVelocity"))
-            anim.SetFloat("xVelocity", rb.linearVelocity.x);
+            anim.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
     }
 
     protected virtual void HandleCollisions()
