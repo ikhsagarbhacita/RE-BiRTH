@@ -51,8 +51,8 @@ public class Enemy : MonoBehaviour
     protected bool isWalled;
     protected bool isGroundInfrontDetected;
 
-    protected float isFacingDirection = -1f;
-    protected bool isFacingRight = false;
+    protected float isFacingDirection = 1f;
+    protected bool isFacingRight = true;
 
     private readonly HashSet<string> animParams = new HashSet<string>();
     private float findPlayerTimer;
