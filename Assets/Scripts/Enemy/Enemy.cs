@@ -86,15 +86,29 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        HandleCollisions();
-        HandleAnimator();
-        PatrolMove();
+        if (isDead)
+        {
+            HandleDeathRotation();
+            return;
+        }
 
         idleTimer -= Time.deltaTime; // Decrease the value
-        stunTimer -= Time.deltaTime;
+        stunTimer -= Time.deltaTime; // Decrease the value
 
-        if (isDead)
-            HandleDeathRotation();
+        HandleCollisions();
+        HandleBehavior();
+        HandleAnimator();
+    }
+
+    protected virtual void HandleBehavior()
+    {
+        if (IsStunned || !canMove)
+        {
+            SetVelocityX(0f);
+            return;
+        }
+
+        PatrolMove();
     }
 
     // Return true kalau player ada.
@@ -117,7 +131,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            PlayerHealth p = FindFirstObjectByType<PlayerHealth>();
+            PlayerHealth p = FindAnyObjectByType<PlayerHealth>();
             if (p != null) player = p.transform;
         }
 

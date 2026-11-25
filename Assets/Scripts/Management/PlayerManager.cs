@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
         instance = this;
 
         if (player == null)
-            player = FindFirstObjectByType<PlayerHealth>();
+            player = FindAnyObjectByType<PlayerHealth>();
 
         if (player != null)
             respawnPosition = respawnPoint != null ? respawnPoint.position : player.transform.position;

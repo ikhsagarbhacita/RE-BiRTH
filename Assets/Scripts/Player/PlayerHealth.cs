@@ -122,9 +122,29 @@ public class PlayerHealth : MonoBehaviour
         OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
 
         sprite.enabled = true;
+
+        // Reset movement dan Flight Energy
+        movement.ResetMovementState();
+
         SetControl(true);
 
-        StartCoroutine(InvincibleRoutine(respawnInvincibleDuration));
+        StartCoroutine(
+            InvincibleRoutine(respawnInvincibleDuration)
+        );
+    }
+
+    public void Kill()
+    {
+        if (IsDead) return;
+
+        CurrentHealth = 0;
+
+        OnHealthChanged?.Invoke(
+            CurrentHealth,
+            maxHealth
+        );
+
+        Die();
     }
 
     private void SetControl(bool value)

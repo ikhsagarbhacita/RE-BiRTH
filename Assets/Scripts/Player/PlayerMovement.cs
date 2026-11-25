@@ -7,27 +7,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private float coyoteTime = 0.15f;
-    [SerializeField] private float jumpBufferTime = 0.15f;   
+    [SerializeField] private float jumpBufferTime = 0.15f;
 
-    [Header("Flying")]                                        
-    [SerializeField] private float flyForce = 8f;             
-    [SerializeField] private float flyDuration = 0.6f;        
+    [Header("Flying")]
+    [SerializeField] private float flyForce = 8f;
+    [SerializeField] private float flyDuration = 0.6f;
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheckTransform;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
 
-    [Header("VFX")]                                          
-    [SerializeField] private ParticleSystem dustFX;
-
-
     public float MoveInput { get; private set; }
     public float Speed => speed;
     public bool isGround { get; private set; }
     public bool isMoving { get; private set; }
-    public bool isFlying { get; private set; }               
-    public bool IsKnockedBack => knockbackTimer > 0f;         
+    public bool isFlying { get; private set; }
+    public bool IsKnockedBack => knockbackTimer > 0f;
     private bool wasGround;
     private float coyoteTimeCounter;
     private InputSystem_Actions actions;
@@ -60,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         actions.Player.Sprint.canceled -= OnFlyCanceled;
         actions.Player.Disable();
 
-        StopFlying();    
+        StopFlying();
         MoveInput = 0f;
         isMoving = false;
     }
@@ -80,13 +76,13 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Moving();
-        HandleFlying(); 
+        HandleFlying();
     }
 
     private void Jumping(InputAction.CallbackContext ctx)
     {
-        jumpBufferCounter = jumpBufferTime; 
-        TryJump();                        
+        jumpBufferCounter = jumpBufferTime;
+        TryJump();
     }
 
     private void TryJump()
@@ -102,15 +98,14 @@ public class PlayerMovement : MonoBehaviour
             maxJump--;
             coyoteTimeCounter = 0f;
 
-            jumpBufferCounter = 0f;                
-            if (isFlying) StopFlying();              
-            if (dustFX != null) dustFX.Play();       
+            jumpBufferCounter = 0f;
+            if (isFlying) StopFlying();
         }
     }
 
     private void Moving()
     {
-        if (IsKnockedBack) return; 
+        if (IsKnockedBack) return;
 
         rb.linearVelocity = new Vector2(MoveInput * speed, rb.linearVelocityY);
     }
@@ -147,7 +142,6 @@ public class PlayerMovement : MonoBehaviour
         canFly = true;
         flyTimer = 0f;
         if (isFlying) StopFlying();
-        if (dustFX != null) dustFX.Play();
     }
 
     public void ApplyKnockback(Vector2 force, float duration)
@@ -173,7 +167,6 @@ public class PlayerMovement : MonoBehaviour
         if (IsKnockedBack || isGround || !canFly || isFlying) return;
 
         isFlying = true;
-        if (dustFX != null && !dustFX.isPlaying) dustFX.Play();
     }
 
     private void StopFlying()
@@ -181,7 +174,6 @@ public class PlayerMovement : MonoBehaviour
         if (!isFlying) return;
 
         isFlying = false;
-        if (dustFX != null && dustFX.isPlaying) dustFX.Stop();
     }
 
     private void HandleFlying()
@@ -199,6 +191,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
+    public void ResetMovementState()
+    {
+        StopFlying();
+
+        canFly = true;
+        flyTimer = 0f;
+        knockbackTimer = 0f;
+        jumpBufferCounter = 0f;
+        coyoteTimeCounter = 0f;
+        maxJump = TotalJumps;
+
+        MoveInput = 0f;
+        isMoving = false;
+        isGround = false;
+        wasGround = false;
+    }
 
     private void OnDrawGizmosSelected()
     {
